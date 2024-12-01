@@ -137,24 +137,43 @@
     </div>
 
     <script>
-        (function() {
-            var modeToggle = document.getElementById('modeToggle');
-            var body = document.body;
+    (function() {
+        var modeToggle = document.getElementById('modeToggle');
+        var body = document.body;
 
-            modeToggle.addEventListener('click', function() {
-                body.classList.toggle('light-mode');
-                body.classList.toggle('dark-mode');
-                
-                var moonIcon = this.querySelector('.bi-moon-stars');
-                var sunIcon = this.querySelector('.bi-sun');
-                
-                if (moonIcon) {
-                    moonIcon.classList.replace('bi-moon-stars', 'bi-sun');
-                } else if (sunIcon) {
-                    sunIcon.classList.replace('bi-sun', 'bi-moon-stars');
-                }
-            });
-        })();
-    </script>
+        // Function to detect time and set initial mode
+        function setInitialMode() {
+            var currentHour = new Date().getHours(); // Get the current hour (0-23)
+            
+            // Define dark mode hours (e.g., from 7 PM to 7 AM)
+            if (currentHour >= 19 || currentHour < 7) {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+            } else {
+                body.classList.add('light-mode');
+                body.classList.remove('dark-mode');
+            }
+        }
+
+        // Initial mode based on time
+        setInitialMode();
+
+        // Toggle mode when user clicks the button
+        modeToggle.addEventListener('click', function() {
+            body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+            
+            var moonIcon = this.querySelector('.bi-moon-stars');
+            var sunIcon = this.querySelector('.bi-sun');
+            
+            if (moonIcon) {
+                moonIcon.classList.replace('bi-moon-stars', 'bi-sun');
+            } else if (sunIcon) {
+                sunIcon.classList.replace('bi-sun', 'bi-moon-stars');
+            }
+        });
+    })();
+</script>
+
 </body>
 </html>
