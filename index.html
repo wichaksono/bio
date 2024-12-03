@@ -13,23 +13,27 @@
 
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Buat elemen <script> untuk memuat Typed.js
-        var script = document.createElement("script");
-        script.src = "https://unpkg.com/typed.js@2.0.12/dist/typed.umd.js";
-        script.async = true;
-
+        document.addEventListener("DOMContentLoaded", function () {
+            // Buat elemen <script> untuk memuat Typed.js
+            var script = document.createElement("script");
+            script.src = "https://unpkg.com/typed.js@2.0.12/dist/typed.umd.js";
+            
             // Setelah skrip dimuat, inisialisasi Typed
             script.onload = function () {
                 var typed = new Typed('#element', {
-                    strings: ['WordPress Developer', 'Bisa PHP, React JS, Python, Java &amp; Kotlin', 'Tau soal SEO, SEM, SMM & SMO', 'Suka Nulis & Rebahan'],
+                    strings: [
+                        'WordPress Developer',
+                        'Bisa PHP, React JS, Python, Java &amp; Kotlin',
+                        'Tau soal SEO, SEM, SMM & SMO',
+                        'Suka Nulis & Rebahan'
+                    ],
                     typeSpeed: 80,
                     backSpeed: 80,
                     backDelay: 80,
                     loop: true,
                 });
             };
-    
+
             // Tambahkan elemen <script> ke <body>
             document.body.appendChild(script);
         });
