@@ -6,10 +6,21 @@
     <title>Hi, Raden Mas Wakhid Wichaksono</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap">
+    </noscript>
 
-    <link rel="preconnect" href="https://unpkg.com">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var script = document.createElement("script");
+            script.src = "https://unpkg.com/typed.js@2.0.12/dist/typed.umd.js";
+            script.async = true;
+            document.body.appendChild(script);
+        });
+    </script>
+
     <style>
         *,body{box-sizing:border-box}.link:focus,.link:hover{box-shadow:3px 5px 0 #000}body{font-family:"Share Tech",sans-serif;display:flex;justify-content:space-between;align-items:center;min-height:100vh;margin:0;padding:20px;transition:background-color .3s,color .3s;flex-direction:column}.title{font-size:2.5rem;line-height:2.25rem;margin:0;text-shadow:2px 2px 0 #ffb30096}.heart{color:red;position:relative;display:inline-block;animation:1s infinite heartbeat;margin-right:2px;margin-left:2px;top:4px}@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}.container{background-color:#fff;box-shadow:0 4px 6px rgba(0,0,0,.1);width:100%;max-width:380px;padding:30px;text-align:center;transition:background-color .3s,box-shadow .3s;border:2px solid #000}.profile-image{width:100px;height:100px;background-color:#e0e0e0;border-radius:50%;margin:0 auto 20px;display:flex;justify-content:center;align-items:center;border:2px solid #000}.social-links,.social-links a{justify-content:center;display:flex}.subtitle{color:#666;margin-bottom:20px;margin-top:10px}.social-links{gap:10px;margin-bottom:30px}.social-links a{color:#333;text-decoration:none;position:relative;width:30px;height:30px;align-items:center}.social-links a svg{transition:.3s ease-in-out}.social-links a:hover svg{width:30px;height:30px;position:absolute}.link{display:block;background-color:#ffdb33;color:#000;text-decoration:none;padding:15px;margin-bottom:15px;border:2px solid #555;transition:.3s;box-shadow:5px 7px 0 #000}.link:focus{background-color:#ff8e00}.dark-mode-toggle,.link.highlight{background-color:transparent}.link.highlight h3{color:#0b0b0b}.link h3{margin:0 0 5px;font-size:20px;display:flex;justify-content:center;align-items:center;gap:5px}.footer,.link p{font-size:14px;color:#555}.link h3 svg{width:20px;height:20px}.link p{margin:0}.footer{margin-top:5px}body.dark-mode{background-color:#121212;color:#ffdb33}.container.dark-mode{background-color:#1e1e1e;box-shadow:0 4px 6px rgba(255,255,255,.1)}.dark-mode .subtitle,.link.dark-mode p{color:#c4c4c4}.link.dark-mode{background-color:#333;color:#ffdb33}.link.dark-mode:hover{border-color:#ffdb33;background-color:#ffdb33}.link.dark-mode:hover h3{color:#000}.link.dark-mode:hover p{color:#666}.link.dark-mode.highlight{border-color:#ffdb33;color:#ffdb33}.link.dark-mode.highlight h3{color:#ffdb33}.social-links a.dark-mode{color:#e0e0e0}.section{margin-top:40px;margin-bottom:30px}.section-title{font-size:22px}.dark-mode .dark-mode-toggle,.dark-mode .link:hover,.dark-mode .social-links a:hover,a{color:#ffb300}.dark-mode-toggle{position:fixed;bottom:20px;right:20px;color:#000;border:none;border-radius:5px;cursor:pointer;font-size:16px}.dark-mode .dark-mode-toggle .bi-brightness-high-fill,.dark-mode-toggle .bi-moon-stars-fill{display:inherit}.dark-mode .dark-mode-toggle .bi-moon-stars-fill,.dark-mode-toggle .bi-brightness-high-fill{display:none}.dark-mode .footer{color:#888}
     </style>
