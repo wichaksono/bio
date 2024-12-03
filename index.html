@@ -13,16 +13,31 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var script = document.createElement("script");
-            script.src = "https://unpkg.com/typed.js@2.0.12/dist/typed.umd.js";
-            script.async = true;
+    document.addEventListener("DOMContentLoaded", function () {
+        // Buat elemen <script> untuk memuat Typed.js
+        var script = document.createElement("script");
+        script.src = "https://unpkg.com/typed.js@2.0.12/dist/typed.umd.js";
+        script.async = true;
+
+            // Setelah skrip dimuat, inisialisasi Typed
+            script.onload = function () {
+                var typed = new Typed('#element', {
+                    strings: ['WordPress Developer', 'Bisa PHP, React JS, Python, Java &amp; Kotlin', 'Tau soal SEO, SEM, SMM & SMO', 'Suka Nulis & Rebahan'],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 80,
+                    loop: true,
+                });
+            };
+    
+            // Tambahkan elemen <script> ke <body>
             document.body.appendChild(script);
         });
     </script>
 
+
     <style>
-        *,body{box-sizing:border-box}.link:focus,.link:hover{box-shadow:3px 5px 0 #000}body{font-family:"Share Tech",sans-serif;display:flex;justify-content:space-between;align-items:center;min-height:100vh;margin:0;padding:20px;transition:background-color .3s,color .3s;flex-direction:column}.title{font-size:2.5rem;line-height:2.25rem;margin:0;text-shadow:2px 2px 0 #ffb30096}.heart{color:red;position:relative;display:inline-block;animation:1s infinite heartbeat;margin-right:2px;margin-left:2px;top:4px}@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}.container{background-color:#fff;box-shadow:0 4px 6px rgba(0,0,0,.1);width:100%;max-width:380px;padding:30px;text-align:center;transition:background-color .3s,box-shadow .3s;border:2px solid #000}.profile-image{width:100px;height:100px;background-color:#e0e0e0;border-radius:50%;margin:0 auto 20px;display:flex;justify-content:center;align-items:center;border:2px solid #000}.social-links,.social-links a{justify-content:center;display:flex}.subtitle{color:#666;margin-bottom:20px;margin-top:10px}.social-links{gap:10px;margin-bottom:30px}.social-links a{color:#333;text-decoration:none;position:relative;width:30px;height:30px;align-items:center}.social-links a svg{transition:.3s ease-in-out}.social-links a:hover svg{width:30px;height:30px;position:absolute}.link{display:block;background-color:#ffdb33;color:#000;text-decoration:none;padding:15px;margin-bottom:15px;border:2px solid #555;transition:.3s;box-shadow:5px 7px 0 #000}.link:focus{background-color:#ff8e00}.dark-mode-toggle,.link.highlight{background-color:transparent}.link.highlight h3{color:#0b0b0b}.link h3{margin:0 0 5px;font-size:20px;display:flex;justify-content:center;align-items:center;gap:5px}.footer,.link p{font-size:14px;color:#555}.link h3 svg{width:20px;height:20px}.link p{margin:0}.footer{margin-top:5px}body.dark-mode{background-color:#121212;color:#ffdb33}.container.dark-mode{background-color:#1e1e1e;box-shadow:0 4px 6px rgba(255,255,255,.1)}.dark-mode .subtitle,.link.dark-mode p{color:#c4c4c4}.link.dark-mode{background-color:#333;color:#ffdb33}.link.dark-mode:hover{border-color:#ffdb33;background-color:#ffdb33}.link.dark-mode:hover h3{color:#000}.link.dark-mode:hover p{color:#666}.link.dark-mode.highlight{border-color:#ffdb33;color:#ffdb33}.link.dark-mode.highlight h3{color:#ffdb33}.social-links a.dark-mode{color:#e0e0e0}.section{margin-top:40px;margin-bottom:30px}.section-title{font-size:22px}.dark-mode .dark-mode-toggle,.dark-mode .link:hover,.dark-mode .social-links a:hover,a{color:#ffb300}.dark-mode-toggle{position:fixed;bottom:20px;right:20px;color:#000;border:none;border-radius:5px;cursor:pointer;font-size:16px}.dark-mode .dark-mode-toggle .bi-brightness-high-fill,.dark-mode-toggle .bi-moon-stars-fill{display:inherit}.dark-mode .dark-mode-toggle .bi-moon-stars-fill,.dark-mode-toggle .bi-brightness-high-fill{display:none}.dark-mode .footer{color:#888}
+        *,body{box-sizing:border-box}.link:focus,.link:hover{box-shadow:3px 5px 0 #000}body{font-family:"Share Tech",sans-serif;display:flex;justify-content:space-between;align-items:center;min-height:100vh;margin:0;padding:20px;transition:background-color .3s,color .3s;flex-direction:column}.title{font-size:2.5rem;line-height:2.25rem;margin:0;text-shadow:2px 2px 0 #ffb30096}.heart{color:red;position:relative;display:inline-block;animation:1s infinite heartbeat;margin-right:2px;margin-left:2px;top:4px}@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}.container{background-color:#fff;box-shadow:0 4px 6px rgba(0,0,0,.1);width:100%;max-width:380px;padding:30px;text-align:center;transition:background-color .3s,box-shadow .3s;border:2px solid #000}.profile-image{width:100px;height:100px;background-color:#e0e0e0;border-radius:50%;margin:0 auto 20px;display:flex;justify-content:center;align-items:center;border:2px solid #000}.social-links,.social-links a{justify-content:center;display:flex}.subtitle{color:#666;margin-bottom:20px;margin-top:10px}.social-links{gap:10px;margin-bottom:30px}.social-links a{color:#333;text-decoration:none;position:relative;width:30px;height:30px;align-items:center}.social-links a svg{transition:.3s ease-in-out}.social-links a:hover svg{width:30px;height:30px;position:absolute}.link{display:block;background-color:#ffdb33;color:#000;text-decoration:none;padding:15px;margin-bottom:15px;border:2px solid #555;transition:.3s;box-shadow:5px 7px 0 #000}.link:focus{background-color:#ff8e00}.dark-mode-toggle,.link.highlight{background-color:transparent}.link.highlight h2{color:#0b0b0b}.link h2{margin:0 0 5px;font-size:20px;display:flex;justify-content:center;align-items:center;gap:5px}.footer,.link p{font-size:14px;color:#555}.link h2 svg{width:20px;height:20px}.link p{margin:0}.footer{margin-top:5px}body.dark-mode{background-color:#121212;color:#ffdb33}.container.dark-mode{background-color:#1e1e1e;box-shadow:0 4px 6px rgba(255,255,255,.1)}.dark-mode .subtitle,.link.dark-mode p{color:#c4c4c4}.link.dark-mode{background-color:#333;color:#ffdb33}.link.dark-mode:hover{border-color:#ffdb33;background-color:#ffdb33}.link.dark-mode:hover h2{color:#000}.link.dark-mode:hover p{color:#666}.link.dark-mode.highlight{border-color:#ffdb33;color:#ffdb33}.link.dark-mode.highlight h2{color:#ffdb33}.social-links a.dark-mode{color:#e0e0e0}.section{margin-top:40px;margin-bottom:30px}.section-title{font-size:22px}.dark-mode .dark-mode-toggle,.dark-mode .link:hover,.dark-mode .social-links a:hover,a{color:#ffb300}.dark-mode-toggle{position:fixed;bottom:20px;right:20px;color:#000;border:none;border-radius:5px;cursor:pointer;font-size:16px}.dark-mode .dark-mode-toggle .bi-brightness-high-fill,.dark-mode-toggle .bi-moon-stars-fill{display:inherit}.dark-mode .dark-mode-toggle .bi-moon-stars-fill,.dark-mode-toggle .bi-brightness-high-fill{display:none}.dark-mode .footer{color:#888}
     </style>
 </head>
 <body>
@@ -49,76 +64,74 @@
     </div>
 
     <div class="social-links">
-        <a href="#" target="_blank" class="social-link">
+        <a href="javascript:void(0);" target="_blank" class="social-link" aria-label="Visit my Github">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
         </a>
-        <a href="#" target="_blank" class="social-link">
+        <a href="javascript:void(0);" target="_blank" class="social-link" aria-label="Visit my Threads">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
                 <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
             </svg>
         </a>
-        <a href="#" target="_blank" class="social-link">
+        <a href="javascript:void(0);" target="_blank" class="social-link" aria-label="Visit my Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
             </svg>
         </a>
-        <a href="#" target="_blank" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        <a href="javascript:void(0);" target="_blank" class="social-link" aria-label="Visit my Youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
             </svg>
         </a>
     </div>
 
     <div class="links">
-        <a href="#" class="link highlight" target="_blank">
-            <h3>
+        <a href="javascript:void(0);" class="link highlight" target="_blank" aria-label="Visit my Products">
+            <h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
                     <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/>
                 </svg>
                 <span>Produk Saya</span>
-            </h3>
+            </h2>
             <p>Produk dan layanan yang saya tawarkan</p>
         </a>
-        <a href="#" class="link" target="_blank">
-            <h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit my Repository">
+            <h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-git" viewBox="0 0 16 16">
                     <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.03 1.03 0 0 0 0-1.457"/>
                 </svg>
                 <span>Repositori GitHub</span>
-            </h3>
+            </h2>
             <p>Repositori proyek open-source</p>
         </a>
-        <a href="#" class="link" target="_blank">
-            <h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit my Telegram Group">
+            <h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
                 </svg>
                 <span>Telegram Group</span>
-            </h3>
+            </h2>
             <p>Grup diskusi dan ngobrol soal WordPress</p>
         </a>
 
         <div class="section">
             <div class="section-title">Tutorial Gratis</div>
         </div>
-        <a href="#" class="link" target="_blank">
-            <h3>WordPress Pemula</h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit tutorial WordPress Pemula">
+            <h2>WordPress Pemula</h2>
             <p>Belajar mengelola website WordPress</p>
         </a>
-        <a href="#" class="link" target="_blank">
-            <h3>WordPress Developer</h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit tutorial WordPress Developer">
+            <h2>WordPress Developer</h2>
             <p>Belajar membuat tema dan plugin WordPress</p>
         </a>
-        <a href="#" class="link" target="_blank">
-            <h3>Toko Online WooCommerce</h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit tutorial Toko Online WooCommerce">
+            <h2>Toko Online WooCommerce</h2>
             <p>Belajar mengelola toko online berbasis WooCommerce</p>
         </a>
-        <a href="#" class="link" target="_blank">
-            <h3>WooCommerce Developer</h3>
+        <a href="javascript:void(0);" class="link" target="_blank" aria-label="Visit tutorial WooCommerce Developer">
+            <h2>WooCommerce Developer</h2>
             <p>Belajar mengembangkan plugin WooCommerce</p>
         </a>
     </div>
@@ -146,15 +159,6 @@
             link.classList.toggle('dark-mode');
         });
     }
-
-    var typed = new Typed('#element', {
-        strings: ['WordPress Developer', 'Bisa PHP, React JS, Python, Java &amp; Kotlin', 'Tau soal SEO, SEM, SMM & SMO', 'Suka Nulis & Rebahan'],
-        typeSpeed: 80,
-        backSpeed: 80,
-        backDelay: 80,
-        loop: true,
-        // smartBackspace: true,
-    });
 </script>
 </body>
 </html>
