@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .circle {
+      width: 170px;
+      height: 170px;
+      background: #4490D9;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #4490D9;
+      border-radius: 50%;
+      opacity: 0.7;
+      transform: scale(1);
+      transition: all 4s ease-in-out;
+    }
+
+    .pulse.active {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    .countdown {
+      position: absolute;
+      color: white;
+      font-size: 24px;
+      z-index: 2;
+    }
+
+    .instruction {
+      position: absolute;
+      color: white;
+      font-size: 16px;
+      z-index: 2;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle">
+    <div class="pulse active"></div>
+    <span class="text">Mulai</span>
+    <span class="countdown" style="display: none;"></span>
+    <span class="instruction" style="display: none;"></span>
+  </div>
+
+  <script>
+    const circle = document.querySelector('.circle');
+    const pulse = document.querySelector('.pulse');
+    const text = document.querySelector('.text');
+    const countdown = document.querySelector('.countdown');
+    const instruction = document.querySelector('.instruction');
+    let isActive = false;
+
+    function startBreathing() {
+      if (isActive) return;
+      isActive = true;
+      text.style.display = 'none';
+      countdown.style.display = 'block';
+      instruction.style.display = 'block';
+      
+      // Reset and remove pulse animation
+      pulse.classList.remove('active');
+      
+      const breathingCycle = async () => {
+        // Initial state
+        pulse.style.transform = 'scale(1)';
+        
+        // Inhale - 4 seconds
+        instruction.textContent = 'Tarik nafas';
+        await new Promise(r => setTimeout(r, 50)); // Small delay to ensure transition starts
+        pulse.style.transform = 'scale(2)';
+        
+        for (let i = 4; i > 0; i--) {
+          countdown.textContent = i;
+          await new Promise(r => setTimeout(r, 1000));
+        }
+        
+        // Hold - 7 seconds
+        instruction.textContent = 'Tahan nafas';
+        for (let i = 7; i > 0; i--) {
+          countdown.textContent = i;
+          await new Promise(r => setTimeout(r, 1000));
+        }
+        
+        // Exhale - 8 seconds
+        instruction.textContent = 'Hembuskan nafas';
+        pulse.style.transition = 'all 8s ease-in-out';
+        pulse.style.transform = 'scale(1)';
+        
+        for (let i = 8; i > 0; i--) {
+          countdown.textContent = i;
+          await new Promise(r => setTimeout(r, 1000));
+        }
+
+        // Reset for next cycle
+        text.style.display = 'block';
+        countdown.style.display = 'none';
+        instruction.style.display = 'none';
+        pulse.style.transition = 'all 4s ease-in-out';
+        pulse.classList.add('active');
+        isActive = false;
+      };
+      
+      breathingCycle();
+    }
+
+    circle.addEventListener('click', startBreathing);
+  </script>
+</body>
+</html>
